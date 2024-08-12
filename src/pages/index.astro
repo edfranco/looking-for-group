@@ -1,0 +1,161 @@
+---
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="bg-shades-dark text-shades-white">
+    <header class="w-full py-12 px-24 flex justify-between">
+      <nav class="flex">
+        <div class="logo">Logo Goes Here</div>
+        <ul class="flex text-lg">
+          <li class="mx-4">Home</li>
+          <li class="mx-4">Find a Group</li>
+          <li class="mx-4">About Us</li>
+          <li class="mx-4">Contact</li>
+        </ul>
+      </nav>
+      <div class="account-buttons flex">
+        <button class="w-20 h-12 mx-3 bg-primary-green rounded-sm">
+          <span>Log In</span>
+        </button>
+        <button
+          class="w-20 h-12 text-primary-green mx-3 border-2 border-primary-green rounded-sm"
+        >
+          <span>Sign Up</span>
+        </button>
+      </div>
+    </header>
+    <hero class="w-full my-36 flex flex-col justif-between items-center">
+      <h1 class="capitalize text-5xl my-6">Looking for Group?</h1>
+      <p class="text-lg my-6">
+        Connect with like-minded gamers and form the ultimate gaming group for
+        your favorite multiplayer games.
+      </p>
+      <div class="account-buttons">
+        <button class="w-24 h-14 mx-3 bg-primary-green rounded-sm">
+          <span>Join Now</span>
+        </button>
+        <button
+          class="w-24 h-14 text-primary-green mx-3 border-2 border-primary-green rounded-sm"
+        >
+          <span>Learn More</span>
+        </button>
+      </div>
+    </hero>
+    <main>
+      <div class="landing-carousel w-[165rem] mb-36 overflow-hidden">
+        <div class="top-carousel flex my-16">
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1723243773"
+            class="carousel flex-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1723254824"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg?t=1723124013"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1203220/header.jpg?t=1723430791"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1723223912"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2139460/header.jpg?t=1723401976"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1722642121"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+        </div>
+        <div class="bottom-carousel flex">
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg?t=1723100367"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/413150/header.jpg?t=1723436016"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/252490/header.jpg?t=1722929041"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1782210/header.jpg?t=1722557360"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/238960/header.jpg?t=1723401996"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/251570/header.jpg?t=1723159743"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+          <img
+            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1722642121"
+            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
+          />
+        </div>
+      </div>
+      <div></div>
+    </main>
+    <footer>
+      <div>
+        <div class="subscribtion-container">
+          <div>Logo Placeholder</div>
+          <p>
+            Subscribe to our newsletter for the latest updates on new features
+            and product releases.
+          </p>
+          <form>
+            <input />
+            <button>Subscribe</button>
+          </form>
+          <p class="font-bold">Stay updated on our latest news and events.</p>
+        </div>
+        <div class="footer-links">
+          <div class="col-1">
+            <a class="link-header font-bold mb-1">About Us</a>
+            <a>Home</a>
+            <a>Contact</a>
+            <a>About</a>
+            <a>FAQ</a>
+          </div>
+          <div class="col-2">
+            <a class="link-header font-bold mb-1">Connect With Us</a>
+            <a>Twitter</a>
+            <a>Instagram</a>
+            <a>LinkedIn</a>
+            <a>Youtube</a>
+            <a>Discord</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-legal border-t-2">
+        <div class="copyyright">
+          <p>© 2023 Gamers United. All rights reserved.</p>
+        </div>
+        <div class="legal-links">
+          <a>Privacy Policy</a>
+          <a>Terms & Conditions</a>
+          <a>Cookie Policy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
