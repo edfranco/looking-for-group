@@ -1,4 +1,7 @@
 ---
+import Carousel from "../Components/Carousel";
+import Header from "../Components/Header.astro";
+import Hero from "../Components/Hero.astro"
 import "../styles/global.css";
 ---
 
@@ -11,76 +14,11 @@ import "../styles/global.css";
     <title>Astro</title>
   </head>
   <body class="bg-shades-dark text-shades-white">
-    <header class="w-full py-12 px-24 flex justify-between">
-      <nav class="flex">
-        <div class="logo">Logo Goes Here</div>
-        <ul class="flex text-lg">
-          <li class="mx-4">Home</li>
-          <li class="mx-4">Find a Group</li>
-          <li class="mx-4">About Us</li>
-          <li class="mx-4">Contact</li>
-        </ul>
-      </nav>
-      <div class="account-buttons flex">
-        <button class="w-20 h-12 mx-3 bg-primary-green rounded-sm">
-          <span>Log In</span>
-        </button>
-        <button
-          class="w-20 h-12 text-primary-green mx-3 border-2 border-primary-green rounded-sm"
-        >
-          <span>Sign Up</span>
-        </button>
-      </div>
-    </header>
-    <hero class="w-full my-36 flex flex-col justif-between items-center">
-      <h1 class="capitalize text-5xl my-6">Looking for Group?</h1>
-      <p class="text-lg my-6">
-        Connect with like-minded gamers and form the ultimate gaming group for
-        your favorite multiplayer games.
-      </p>
-      <div class="account-buttons">
-        <button class="w-24 h-14 mx-3 bg-primary-green rounded-sm">
-          <span>Join Now</span>
-        </button>
-        <button
-          class="w-24 h-14 text-primary-green mx-3 border-2 border-primary-green rounded-sm"
-        >
-          <span>Learn More</span>
-        </button>
-      </div>
-    </hero>
+    <Header />
+    <Hero />
     <main>
       <div class="landing-carousel w-[165rem] mb-36 overflow-hidden">
-        <div class="top-carousel flex my-16">
-          <img
-            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1723243773"
-            class="carousel flex-slide h-96 w-96 bg-shades-white mx-2"
-          />
-          <img
-            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1723254824"
-            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
-          />
-          <img
-            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg?t=1723124013"
-            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
-          />
-          <img
-            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1203220/header.jpg?t=1723430791"
-            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
-          />
-          <img
-            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1723223912"
-            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
-          />
-          <img
-            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2139460/header.jpg?t=1723401976"
-            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
-          />
-          <img
-            src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1722642121"
-            class="carousel-slide h-96 w-96 bg-shades-white mx-2"
-          />
-        </div>
+        <Carousel />
         <div class="bottom-carousel flex">
           <img
             src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg?t=1723100367"
