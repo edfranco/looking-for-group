@@ -1,33 +1,72 @@
-import { useState } from "react";
-let gamesArr = [
-    "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/730/header.jpg?t=1723243773",
-    "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/570/header.jpg?t=1723254824",
-    "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/578080/header.jpg?t=1723124013",
-    "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1203220/header.jpg?t=1723430791",
-    "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/271590/header.jpg?t=1723223912",
-    "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/2139460/header.jpg?t=1723401976",
-    "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1722642121",
-  ];
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
-
-// `http://api.steampowered.com/<interface name>/<method name>/v<version>/?key=${process.env.REACT_APP_BASE_URL}`
-console.log(process.env.REACT_APP_BASE_API_KEY)
-
-interface State {
-  images:string[];
+interface Game {
+    id: number | string
+    name: string
+    src: string
 }
 
-export default function carousel() {
-    const [games, setGames] = useState([]);
-    
-  return (
-    <div className="top-carousel flex my-16">
-      {games.map((game) => (
-        <img
-          src={game}
-          className="carousel-slide h-96 w-96 bg-shades-white mx-2"
-        />
-      ))}
-    </div>
-  );
+export const Carousel = () => {
+    const [gamesArr, setGamesArr] = useState<Game[]>([])
+    const [loading, setLoading] = useState<boolean>(true)
+    const [error, setError] = useState<string | null>(null)
+
+    useEffect(() => {
+        const fetchGames = async () => {
+            try {
+                const res = await axios.get('http://localhost:3000/')
+                setGamesArr(res.data)
+                setLoading(false) // Set loading to false once data is fetched
+            } catch (err) {
+                setError('Failed to fetch games')
+                setLoading(false)
+            }
+        }
+        fetchGames()
+    }, [])
+
+    if (loading) return <p>Loading games...</p>
+    if (error) return <p>{error}</p>
+
+    return (
+        <div className="landing-carousel w-full mb-36 box-border overflow-hidden">
+            <div className="top-carousel w-max flex my-16 animate-scroll">
+                {gamesArr.slice(0, gamesArr.length / 2).map((game) => (
+                    <img
+                        key={game.id}
+                        src={game.src}
+                        alt={game.name}
+                        className="carousel-slide h-auto w-96 bg-shades-white mx-2"
+                    />
+                ))}
+                {gamesArr.slice(0, gamesArr.length / 2).map((game) => (
+                    <img
+                        key={game.id}
+                        src={game.src}
+                        alt={game.name}
+                        className="carousel-slide h-auto w-96 bg-shades-white mx-2"
+                    />
+                ))}
+            </div>
+            <div className="bottom-carousel w-max flex my-16 animate-scroll-reverse">
+                {gamesArr.slice(gamesArr.length / 2).map((game) => (
+                    <img
+                        key={game.id}
+                        src={game.src}
+                        alt={game.name}
+                        className="carousel-slide h-auto w-96 bg-shades-white mx-2"
+                    />
+                ))}
+                {gamesArr.slice(gamesArr.length / 2).map((game) => (
+                    <img
+                        key={game.id}
+                        src={game.src}
+                        alt={game.name}
+                        className="carousel-slide h-auto w-96 bg-shades-white mx-2"
+                    />
+                ))}
+            </div>
+        </div>
+    )
 }
